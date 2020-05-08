@@ -54,15 +54,10 @@ find_dropbox_2dii <- function(...) {
   out
 }
 
-find_dropbox_2dii2 <- function(..., otherwhise = getOption("r2dii_path_retry")) {
-  if (fs::dir_exists(path_dropbox_2dii())) {
-    return(path_dropbox_2dii(...))
+with_path_on_error <- function(.f, on_error = fs::path) {
+  function(...)  {
+    tryCatch(.f(...), error = function(e) on_error(...))
   }
-
-  otherwhise <- otherwhise %||%
-    abort(class = "no_dropbox", "Can't find Dropbox.")
-
-  otherwhise(...)
 }
 
 #' @rdname find_dropbox_2dii
