@@ -1,14 +1,3 @@
-test_that("w/o Dropbox uses option `r2dii_path_retry`", {
-  skip_if(dropbox_exists())
-
-  expect_error(
-    expect_equal(find_dropbox_2dii2("a", "path"), fs::path("a", "path"))
-  )
-  withr::with_options(list(r2dii_path_retry = fs::path), {
-    expect_equal(find_dropbox_2dii2("a", "path"), fs::path("a", "path"))
-  })
-})
-
 test_that("path_dropbox_2dii output is as expected", {
   expect_equal(
     fs::path_file(path_dropbox_2dii()),

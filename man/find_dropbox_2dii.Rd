@@ -2,13 +2,10 @@
 % Please edit documentation in R/find_dropbox_2dii.R
 \name{find_dropbox_2dii}
 \alias{find_dropbox_2dii}
-\alias{find_dropbox_2dii2}
 \alias{path_dropbox_2dii}
 \title{Easily access directories in your local copy of 2dii's Dropbox folder}
 \usage{
 find_dropbox_2dii(...)
-
-find_dropbox_2dii2(..., .f = fs::path)
 
 path_dropbox_2dii(...)
 }

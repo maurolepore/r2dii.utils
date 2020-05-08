@@ -54,12 +54,6 @@ find_dropbox_2dii <- function(...) {
   out
 }
 
-with_path_on_error <- function(.f, on_error = fs::path) {
-  function(...)  {
-    tryCatch(.f(...), error = function(e) on_error(...))
-  }
-}
-
 #' @rdname find_dropbox_2dii
 #' @export
 path_dropbox_2dii <- function(...) {
