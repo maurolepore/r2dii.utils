@@ -54,6 +54,13 @@ find_dropbox_2dii <- function(...) {
   out
 }
 
+find_dropbox_2dii2 <- function(...) {
+  dropbox_exists <- fs::dir_exists(path_dropbox_2dii())
+
+  out <- warn_if_not_dir_exists(path_dropbox_2dii(...))
+  out
+}
+
 #' @rdname find_dropbox_2dii
 #' @export
 path_dropbox_2dii <- function(...) {
